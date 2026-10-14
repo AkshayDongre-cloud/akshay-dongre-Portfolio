@@ -17,8 +17,28 @@
     .stats{margin-top:-28px;position:relative;z-index:2}.statgrid{display:grid;grid-template-columns:repeat(4,1fr);background:white;border-radius:16px;box-shadow:var(--shadow);border:1px solid #edf0f5;overflow:hidden}.stat{padding:23px 25px;border-right:1px solid var(--line)}.stat:last-child{border:0}.stat strong{display:block;font-family:Manrope,sans-serif;color:var(--navy);font-size:1.45rem;letter-spacing:-.04em}.stat span{font-size:.82rem;color:var(--muted)}
     section{padding:78px 0;scroll-margin-top:85px}.sectionHead{margin-bottom:30px;display:flex;align-items:end;justify-content:space-between;gap:20px}.kicker{font-size:.74rem;text-transform:uppercase;letter-spacing:.16em;font-weight:800;color:#4d8a61;margin-bottom:8px}.sectionHead h2{font-family:Manrope,sans-serif;font-size:clamp(1.8rem,3vw,2.6rem);line-height:1.12;letter-spacing:-.055em;color:var(--navy);margin-bottom:0}.sectionHead p{max-width:470px;color:var(--muted);margin-bottom:0;font-size:.94rem}
     .aboutGrid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.panel{background:white;border:1px solid var(--line);border-radius:16px;padding:28px;box-shadow:0 8px 24px rgba(16,29,53,.035)}.panel h3{font-family:Manrope,sans-serif;color:var(--navy);font-size:1.12rem;margin-bottom:12px}.panel p{color:#59667b;margin-bottom:0}.pillrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.pill{font-size:.78rem;padding:7px 10px;border-radius:100px;background:#f0f5f1;color:#38684a;border:1px solid #e1eee4;font-weight:600}
-    .eduGrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.edu{padding:22px;background:white;border:1px solid var(--line);border-radius:14px}.edu .year{font-size:.78rem;font-weight:800;color:#4d8a61;letter-spacing:.05em}.edu h3{font-family:Manrope,sans-serif;color:var(--navy);font-size:1.02rem;margin:7px 0 4px}.edu p{font-size:.88rem;color:var(--muted);margin:0}.score{display:inline-block;margin-top:12px;background:#f2f6f2;padding:5px 9px;border-radius:7px;font-size:.78rem;font-weight:700;color:#38684a}
-    .timeline{display:grid;gap:16px}.role{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:start}.role h3{margin:0 0 3px;font-family:Manrope,sans-serif;color:var(--navy);font-size:1.1rem}.org{font-weight:700;color:#477d58;font-size:.92rem}.date{font-size:.8rem;color:var(--muted);white-space:nowrap;background:#f2f5f9;border-radius:8px;padding:6px 9px}.role ul{margin:15px 0 0;padding-left:20px;color:#59667b}.role li{padding:3px 0}.location{font-size:.82rem;color:var(--muted);margin-top:3px}
+    /* Animated roadmap timeline: education and professional experience */
+    .roadmap{position:relative;max-width:940px;margin:10px auto 0;padding:8px 0 8px;isolation:isolate}
+    .roadmap:before{content:"";position:absolute;left:50%;top:12px;bottom:12px;width:3px;border-radius:5px;background:linear-gradient(180deg,#b8e0c2,#d9b56d,#b8e0c2);transform:translateX(-50%) scaleY(0);transform-origin:top;transition:transform 1.2s cubic-bezier(.2,.7,.2,1);z-index:-1}
+    .roadmap.is-animated:before{transform:translateX(-50%) scaleY(1)}
+    .roadmap-item{position:relative;width:50%;padding:0 42px 30px 0;opacity:1}
+    .roadmap-item:nth-child(even){margin-left:50%;padding:0 0 30px 42px}
+    .roadmap-item:last-child{padding-bottom:0}
+    .roadmap-dot{position:absolute;right:-11px;top:24px;width:22px;height:22px;border:5px solid #fff;border-radius:50%;background:#4d8a61;box-shadow:0 0 0 3px #b8e0c2,0 5px 16px rgba(16,29,53,.15);z-index:2;transition:transform .35s ease,background .35s ease}
+    .roadmap-item:nth-child(even) .roadmap-dot{right:auto;left:-11px}
+    .roadmap-item:hover .roadmap-dot{transform:scale(1.22);background:#d9b56d}
+    .roadmap-card{position:relative;background:#fff;border:1px solid var(--line);border-radius:17px;padding:23px;box-shadow:0 10px 28px rgba(16,29,53,.055);transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;overflow:hidden}
+    .roadmap-card:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(180deg,#4d8a61,#b8e0c2)}
+    .roadmap-item:nth-child(even) .roadmap-card:before{background:linear-gradient(180deg,#d9b56d,#f0dba9)}
+    .roadmap-card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:#cbd8d0}
+    .roadmap-year{display:inline-flex;align-items:center;gap:7px;color:#477d58;font-size:.76rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;margin-bottom:9px}
+    .roadmap-card h3{font-family:Manrope,sans-serif;color:var(--navy);font-size:1.05rem;line-height:1.35;margin:0 0 6px}
+    .roadmap-card p{font-size:.88rem;color:var(--muted);margin:0}
+    .roadmap-card .score{display:inline-block;margin-top:13px;background:#f2f6f2;padding:5px 9px;border-radius:7px;font-size:.78rem;font-weight:700;color:#38684a}
+    .role{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:12px}.role h3{margin:0 0 5px;font-family:Manrope,sans-serif;color:var(--navy);font-size:1.08rem;line-height:1.35}.org{font-weight:700;color:#477d58;font-size:.92rem}.date{font-size:.76rem;color:#43536b;white-space:nowrap;background:#f2f5f9;border:1px solid #e5eaf1;border-radius:100px;padding:6px 10px;font-weight:700}.role ul{margin:13px 0 0;padding-left:19px;color:#59667b;font-size:.88rem}.role li{padding:3px 0}.location{font-size:.82rem;color:var(--muted);margin-top:3px}
+    .roadmap-item.scroll-reveal{transform:translateX(-30px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+    .roadmap-item:nth-child(even).scroll-reveal{transform:translateX(30px)}
+    .roadmap-item.scroll-reveal.is-visible,.roadmap-item:nth-child(even).scroll-reveal.is-visible{transform:translateX(0)}
     .projectGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.project{background:white;border:1px solid var(--line);border-radius:16px;padding:26px;display:flex;flex-direction:column;min-height:270px;transition:.2s}.project:hover{transform:translateY(-4px);box-shadow:var(--shadow)}.projectNum{width:40px;height:40px;border-radius:12px;background:#edf5ef;color:#3d7850;display:grid;place-items:center;font-weight:800;margin-bottom:20px}.project h3{font-family:Manrope,sans-serif;font-size:1.18rem;color:var(--navy);line-height:1.35;margin-bottom:10px}.project p{font-size:.92rem;color:var(--muted)}.project .pillrow{margin-top:auto;padding-top:10px}
 
     .certificateGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
@@ -36,11 +56,27 @@
     @media(max-width:560px){.certificateGrid{grid-template-columns:1fr}.certificatePreview img{height:230px}}
 
     .skillGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.skillbox{background:white;border:1px solid var(--line);border-radius:14px;padding:22px}.skillbox .icon{font-size:1.3rem}.skillbox h3{font-family:Manrope,sans-serif;color:var(--navy);margin:12px 0 10px;font-size:1rem}.skillbox p{font-size:.88rem;color:var(--muted);margin:0}
-    .awardsGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.award{background:white;border:1px solid var(--line);padding:20px;border-radius:14px}.award strong{display:block;color:var(--navy);font-family:Manrope,sans-serif;margin-bottom:7px}.award span{color:var(--muted);font-size:.86rem}
+    /* Distinct editorial-style achievements and activities presentation */
+    .achievementLayout{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;align-items:stretch}
+    .achievement-feature{position:relative;overflow:hidden;min-height:270px;padding:30px;border-radius:22px;color:#fff;background:radial-gradient(circle at 90% 15%,rgba(184,224,194,.25),transparent 30%),linear-gradient(135deg,#101d35,#203b59);box-shadow:0 18px 42px rgba(16,29,53,.16)}
+    .achievement-feature:after{content:"01";position:absolute;right:16px;bottom:-35px;font:800 10rem/1 Manrope,sans-serif;color:rgba(255,255,255,.055);letter-spacing:-.1em}
+    .achievement-badge{display:inline-flex;align-items:center;gap:8px;padding:7px 11px;border:1px solid rgba(255,255,255,.22);border-radius:100px;background:rgba(255,255,255,.08);font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#d6efdc}
+    .achievement-feature h3{position:relative;z-index:1;font:800 clamp(1.5rem,3vw,2.15rem)/1.15 Manrope,sans-serif;letter-spacing:-.05em;margin:23px 0 12px;max-width:440px}
+    .achievement-feature p{position:relative;z-index:1;color:#d4ddeb;max-width:450px;margin:0;font-size:.95rem}
+    .achievement-rank{position:relative;z-index:1;display:flex;align-items:baseline;gap:10px;margin-top:24px}.achievement-rank strong{font:800 2.2rem/1 Manrope,sans-serif;color:var(--green)}.achievement-rank span{font-size:.83rem;color:#d4ddeb}
+    .activity-stack{display:grid;gap:14px}
+    .activity-card{display:grid;grid-template-columns:58px 1fr;gap:16px;align-items:start;background:#fff;border:1px solid var(--line);border-radius:18px;padding:21px;box-shadow:0 8px 24px rgba(16,29,53,.045);transition:transform .25s ease,box-shadow .25s ease}
+    .activity-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+    .activity-icon{width:54px;height:54px;display:grid;place-items:center;border-radius:16px;background:#f0f5f1;font-size:1.55rem}
+    .activity-card:nth-child(2) .activity-icon{background:#fbf4e5}
+    .activity-card h3{font:800 1rem/1.3 Manrope,sans-serif;color:var(--navy);margin:1px 0 6px}.activity-card p{font-size:.86rem;color:var(--muted);margin:0}
+    .activity-strip{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center;margin-top:18px;padding:22px 25px;border-radius:16px;background:#eaf0f6;border:1px solid #dfe7ef}
+    .activity-strip .strip-label{font-size:.72rem;text-transform:uppercase;letter-spacing:.15em;font-weight:800;color:#477d58;white-space:nowrap}
+    .activity-strip p{font-size:.9rem;color:#526076;margin:0}.activity-strip strong{color:var(--navy)}
     .contact{background:#eaf0f6;padding:70px 0}.contactBox{background:var(--navy);border-radius:22px;padding:clamp(28px,5vw,55px);color:white;display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center}.contactBox h2{font-family:Manrope,sans-serif;font-size:clamp(1.8rem,3vw,2.7rem);letter-spacing:-.05em;line-height:1.12;margin:10px 0 12px}.contactBox p{color:#c9d4e2;max-width:560px;margin-bottom:0}.contactLinks{display:grid;gap:10px;min-width:210px}.contactLinks a{padding:11px 14px;border:1px solid rgba(255,255,255,.2);border-radius:9px;font-size:.88rem}.contactLinks a:hover{background:rgba(255,255,255,.08)}footer{padding:24px 0;color:#778399;font-size:.8rem}.footerinner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
     @media(max-width:900px){.navlinks{gap:10px;font-size:.8rem}.navcta{padding:9px 11px}}
-    @media(max-width:780px){.navinner{align-items:flex-start;padding:14px 0;flex-direction:column}.navlinks{width:100%;overflow-x:auto;padding-bottom:3px;gap:15px}.navlinks a:not(.navcta){display:inline-block;white-space:nowrap}.hero{padding:55px 0 65px}.heroGrid{grid-template-columns:1fr;gap:35px}.portraitShell{justify-self:start;width:220px}.photoNote{text-align:left}.statgrid{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}.aboutGrid,.projectGrid,.eduGrid{grid-template-columns:1fr}.skillGrid{grid-template-columns:repeat(2,1fr)}.sectionHead{display:block}.sectionHead p{margin-top:12px}.contactBox{grid-template-columns:1fr}.contactLinks{grid-template-columns:1fr 1fr}.role{grid-template-columns:1fr}.date{justify-self:start}}
-    @media(max-width:440px){.wrap{width:min(100% - 28px,1120px)}.skillGrid{grid-template-columns:1fr}.stat{padding:18px}.contactLinks{grid-template-columns:1fr}section{padding:58px 0}.hero p{font-size:1rem}}
+    @media(max-width:780px){.navinner{align-items:flex-start;padding:14px 0;flex-direction:column}.navlinks{width:100%;overflow-x:auto;padding-bottom:3px;gap:15px}.navlinks a:not(.navcta){display:inline-block;white-space:nowrap}.hero{padding:55px 0 65px}.heroGrid{grid-template-columns:1fr;gap:35px}.portraitShell{justify-self:start;width:220px}.photoNote{text-align:left}.statgrid{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}.aboutGrid,.projectGrid{grid-template-columns:1fr}.roadmap:before{left:11px}.roadmap-item,.roadmap-item:nth-child(even){width:100%;margin-left:0;padding:0 0 22px 42px}.roadmap-dot,.roadmap-item:nth-child(even) .roadmap-dot{left:0;right:auto}.achievementLayout{grid-template-columns:1fr}.achievement-feature{min-height:240px}.activity-strip{grid-template-columns:1fr;gap:8px}.skillGrid{grid-template-columns:repeat(2,1fr)}.sectionHead{display:block}.sectionHead p{margin-top:12px}.contactBox{grid-template-columns:1fr}.contactLinks{grid-template-columns:1fr 1fr}.role{grid-template-columns:1fr}.date{justify-self:start}}
+    @media(max-width:440px){.wrap{width:min(100% - 28px,1120px)}.skillGrid{grid-template-columns:1fr}.stat{padding:18px}.roadmap-card{padding:20px}.role{flex-direction:column;gap:8px}.achievement-feature{padding:24px}.activity-card{grid-template-columns:48px 1fr;padding:17px}.activity-icon{width:46px;height:46px;border-radius:13px}.contactLinks{grid-template-columns:1fr}section{padding:58px 0}.hero p{font-size:1rem}}
     /* Scroll reveal animations */
     .scroll-reveal{opacity:0;transform:translateY(26px);transition:opacity .65s ease,transform .65s cubic-bezier(.2,.7,.2,1);will-change:opacity,transform}
     .scroll-reveal.is-visible{opacity:1;transform:translateY(0)}
@@ -61,6 +97,7 @@
         <a href="#projects">Projects</a>
         <a href="#certificates">Certificates</a>
         <a href="#skills">Skills</a>
+        <a href="#achievements">Achievements</a>
         <a class="navcta" href="#contact">Let's connect ↗</a>
       </div>
     </div>
@@ -74,7 +111,7 @@
         <p class="subline">MBA Finance student · Aspiring Finance Professional</p>
         <p>I’m building a strong foundation in financial analysis, accounting operations, and business reporting—combining practical experience with a curiosity for how businesses create value.</p>
         <div class="actions">
-          <a class="btn btn-light" href="AkshayDongre_Resume.pdf" download>↓ Download Resume</a>
+          <a class="btn btn-light" href="AkshayDongre_Resume.pdf" target="_blank" rel="noopener">↗ View Resume</a>
           <a class="btn btn-outline" href="#projects">Explore my work ↘</a>
         </div>
         <p class="photoNote">Based in Nashik, Maharashtra, India</p>
@@ -104,26 +141,26 @@
       </div>
     </section>
 
-    <!-- 2. EDUCATION -->
+    <!-- 2. EDUCATION: animated academic roadmap -->
     <section id="education" style="background:#fff">
       <div class="wrap">
-        <div class="sectionHead"><div><div class="kicker">Academic foundation</div><h2>Education</h2></div><p>Commerce background with a current focus on finance and management.</p></div>
-        <div class="eduGrid">
-          <article class="edu"><div class="year">2025–2027 · PURSUING</div><h3>MBA — Finance</h3><p>MET’s Institute of Management, Nashik</p><span class="score">Sem I SGPA: 7.85</span></article>
-          <article class="edu"><div class="year">2022–2025</div><h3>B.Com — Cost & Works Accounting</h3><p>Sir D. R. MS Gosavi College of Commerce, Nashik</p><span class="score">CGPA: 8.59</span></article>
-          <article class="edu"><div class="year">2022</div><h3>Higher Secondary Certificate (HSC)</h3><p>Sir D. R. MS Gosavi College of Commerce, Nashik</p><span class="score">69%</span></article>
-          <article class="edu"><div class="year">2020</div><h3>Secondary School Certificate (SSC)</h3><p>Adarsh Secondary English Medium School, Nashik</p><span class="score">75.40%</span></article>
+        <div class="sectionHead"><div><div class="kicker">My learning journey</div><h2>Education roadmap</h2></div><p>Each milestone has helped build the commerce, accounting, and finance foundation I use today.</p></div>
+        <div class="roadmap education-roadmap">
+          <article class="roadmap-item"><span class="roadmap-dot" aria-hidden="true"></span><div class="roadmap-card"><div class="roadmap-year">2025–2027 · Currently pursuing</div><h3>MBA — Finance</h3><p>MET’s Institute of Management, Nashik</p><span class="score">Sem I SGPA: 7.85</span></div></article>
+          <article class="roadmap-item"><span class="roadmap-dot" aria-hidden="true"></span><div class="roadmap-card"><div class="roadmap-year">2022–2025 · Completed</div><h3>B.Com — Cost & Works Accounting</h3><p>Sir D. R. MS Gosavi College of Commerce, Nashik</p><span class="score">CGPA: 8.59</span></div></article>
+          <article class="roadmap-item"><span class="roadmap-dot" aria-hidden="true"></span><div class="roadmap-card"><div class="roadmap-year">2022 · Completed</div><h3>Higher Secondary Certificate (HSC)</h3><p>Sir D. R. MS Gosavi College of Commerce, Nashik</p><span class="score">69%</span></div></article>
+          <article class="roadmap-item"><span class="roadmap-dot" aria-hidden="true"></span><div class="roadmap-card"><div class="roadmap-year">2020 · Completed</div><h3>Secondary School Certificate (SSC)</h3><p>Adarsh Secondary English Medium School, Nashik</p><span class="score">75.40%</span></div></article>
         </div>
       </div>
     </section>
 
-    <!-- 3. EXPERIENCE -->
+    <!-- 3. EXPERIENCE: animated career roadmap -->
     <section id="experience">
       <div class="wrap">
-        <div class="sectionHead"><div><div class="kicker">Where I’ve learned</div><h2>Experience</h2></div><p>Practical exposure to accounting systems, financial records, and routine finance operations.</p></div>
-        <div class="timeline">
-          <article class="panel"><div class="role"><div><h3>Finance and Accounting OJT Intern</h3><div class="org">Avdhoot Technocrates Pvt. Ltd.</div><div class="location">Nashik, Maharashtra · Work from office</div></div><div class="date">Jun – Aug 2026</div></div><ul><li>Gaining hands-on experience in finance and accounting operations using ERP software and Tally Prime.</li><li>Recording accounting transactions, verifying invoices, and maintaining financial records.</li><li>Assisting in GST-related accounting, reporting, and day-to-day finance operations</li></a></article>     
-          <article class="panel"><div class="role"><div><h3>Accounting Intern</h3><div class="org">CA G. S. Suryawanshi</div><div class="location">Nashik, Maharashtra · Work from office</div></div><div class="date">May – Aug 2025</div></div><ul><li>Used Tally Prime and Microsoft Excel for GST sales and purchase registers, bank statements, sales and purchase bill entries, and insurance records.</li><li>Assisted with financial statement preparation and related accounting work.</li></ul></article>
+        <div class="sectionHead"><div><div class="kicker">Learning through practice</div><h2>Experience roadmap</h2></div><p>A timeline of hands-on exposure to accounting systems, financial records, and day-to-day finance operations.</p></div>
+        <div class="roadmap experience-roadmap">
+          <article class="roadmap-item"><span class="roadmap-dot" aria-hidden="true"></span><div class="roadmap-card"><div class="role"><div><h3>Finance and Accounting OJT Intern</h3><div class="org">Avdhoot Technocrates Pvt. Ltd.</div><div class="location">Nashik, Maharashtra · Work from office</div></div><div class="date">Jun – Aug 2026</div></div><ul><li>Gaining hands-on experience in finance and accounting operations using ERP software and Tally Prime.</li><li>Recording accounting transactions, verifying invoices, and maintaining financial records.</li><li>Assisting in GST-related accounting, reporting, and day-to-day finance operations.</li></ul></div></article>
+          <article class="roadmap-item"><span class="roadmap-dot" aria-hidden="true"></span><div class="roadmap-card"><div class="role"><div><h3>Accounting Intern</h3><div class="org">CA G. S. Suryawanshi</div><div class="location">Nashik, Maharashtra · Work from office</div></div><div class="date">May – Aug 2025</div></div><ul><li>Used Tally Prime and Microsoft Excel for GST sales and purchase registers, bank statements, sales and purchase bill entries, and insurance records.</li><li>Assisted with financial statement preparation and related accounting work.</li></ul></div></article>
         </div>
       </div>
     </section>
@@ -221,14 +258,18 @@
       </div>
     </section>
 
-    <!-- Additional section kept after the five requested sections -->
+    <!-- Achievements & activities: featured achievement plus activity highlights -->
     <section style="background:#fff" id="achievements">
-      <div class="wrap"><div class="sectionHead"><div><div class="kicker">Beyond the classroom</div><h2>Achievements & activities</h2></div></div>
-        <div class="awardsGrid">
-          <article class="award"><strong>🏆 College Topper</strong><span>1st Prize — T.Y. B.Com Final Examination.</span></article>
-          <article class="award"><strong>📸 District-level Photography</strong><span>1st Rank — Swar Rang Competition organised by Savitribai Phule Pune University.</span></article>
-          <article class="award"><strong>💡 Innovation & writing</strong><span>3rd Rank — Aavishkar Competition (college level); participated in Task Force business idea pitching and published an ACME article on the role of youth in building a Smart India.</span></article>
+      <div class="wrap">
+        <div class="sectionHead"><div><div class="kicker">Beyond academics</div><h2>Achievements & activities</h2></div><p>Recognition for academic performance, creativity, innovation, and communicating ideas.</p></div>
+        <div class="achievementLayout">
+          <article class="achievement-feature"><span class="achievement-badge">🏆 Featured achievement</span><h3>First Prize — T.Y. B.Com Final Examination</h3><p>Recognised as a college topper for academic performance at Sir D. R. MS Gosavi College of Commerce.</p><div class="achievement-rank"><strong>1st</strong><span>Prize · Academic achievement</span></div></article>
+          <div class="activity-stack">
+            <article class="activity-card"><div class="activity-icon" aria-hidden="true">📸</div><div><h3>Photography recognition</h3><p>Achieved 1st Rank in the Swar Rang Competition organised by Savitribai Phule Pune University.</p></div></article>
+            <article class="activity-card"><div class="activity-icon" aria-hidden="true">💡</div><div><h3>Innovation & idea pitching</h3><p>Earned 3rd Rank in the college-level Aavishkar Competition and participated in Task Force business idea pitching.</p></div></article>
+          </div>
         </div>
+        <div class="activity-strip"><span class="strip-label">Writing & contribution</span><p><strong>ACME article published:</strong> contributed a written piece on the role of youth in building a Smart India.</p></div>
       </div>
     </section>
 
@@ -251,14 +292,30 @@
 
     // Reveal cards and section headings smoothly as visitors scroll down.
     const revealItems = document.querySelectorAll(
-      '.sectionHead, .aboutGrid .panel, .edu, .timeline .panel, .project, .certificateCard, .skillbox, .award, .stat, .contactBox'
+      '.sectionHead, .aboutGrid .panel, .roadmap-item, .project, .certificateCard, .skillbox, .achievement-feature, .activity-card, .activity-strip, .stat, .contactBox'
     );
     revealItems.forEach((item, index) => {
       item.classList.add('scroll-reveal');
-      if (item.matches('.edu, .project, .skillbox, .award, .stat')) {
+      if (item.matches('.roadmap-item, .project, .skillbox, .activity-card, .stat')) {
         item.style.transitionDelay = `${(index % 4) * 70}ms`;
       }
     });
+
+    // Draw each roadmap connector when its timeline enters the viewport.
+    const roadmaps = document.querySelectorAll('.roadmap');
+    if ('IntersectionObserver' in window && roadmaps.length) {
+      const roadmapObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-animated');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      roadmaps.forEach(roadmap => roadmapObserver.observe(roadmap));
+    } else {
+      roadmaps.forEach(roadmap => roadmap.classList.add('is-animated'));
+    }
 
     if ('IntersectionObserver' in window) {
       const revealObserver = new IntersectionObserver((entries, observer) => {
