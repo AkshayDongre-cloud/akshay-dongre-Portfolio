@@ -26,6 +26,51 @@
     @media(max-width:900px){.navlinks{gap:10px;font-size:.8rem}.navcta{padding:9px 11px}}
     @media(max-width:780px){.navinner{align-items:flex-start;padding:14px 0;flex-direction:column}.navlinks{width:100%;overflow-x:auto;padding-bottom:3px;gap:15px}.navlinks a:not(.navcta){display:inline-block;white-space:nowrap}.hero{padding:55px 0 65px}.heroGrid{grid-template-columns:1fr;gap:35px}.portraitShell{justify-self:start;width:220px}.photoNote{text-align:left}.statgrid{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}.aboutGrid,.projectGrid,.eduGrid{grid-template-columns:1fr}.skillGrid{grid-template-columns:repeat(2,1fr)}.sectionHead{display:block}.sectionHead p{margin-top:12px}.contactBox{grid-template-columns:1fr}.contactLinks{grid-template-columns:1fr 1fr}.role{grid-template-columns:1fr}.date{justify-self:start}}
     @media(max-width:440px){.wrap{width:min(100% - 28px,1120px)}.skillGrid{grid-template-columns:1fr}.stat{padding:18px}.contactLinks{grid-template-columns:1fr}section{padding:58px 0}.hero p{font-size:1rem}}
+
+    /* Animated education and experience roadmaps */
+    .roadmap{position:relative;display:grid;gap:22px;padding:8px 0 8px 34px;max-width:900px;margin:0 auto}
+    .roadmap:before{content:"";position:absolute;left:11px;top:12px;bottom:12px;width:3px;border-radius:5px;background:linear-gradient(180deg,#6da57a,#d9b56d,#c9d8e8);transform-origin:top;animation:roadDraw 1.2s ease both}
+    .roadmap-item{position:relative;min-width:0}
+    .roadmap-item.edu{padding:0;background:transparent;border:0;border-radius:0}
+    .roadmap-dot{position:absolute;left:-32px;top:25px;width:20px;height:20px;border:5px solid #fff;border-radius:50%;background:#4d8a61;box-shadow:0 0 0 3px #b8e0c2;z-index:1}
+    .roadmap-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:23px 25px;box-shadow:0 10px 28px rgba(16,29,53,.045);transition:transform .25s ease,box-shadow .25s ease}
+    .roadmap-card:hover{transform:translateX(5px);box-shadow:var(--shadow)}
+    .roadmap-card .year{display:inline-flex;align-items:center;gap:7px;font-size:.76rem;font-weight:800;letter-spacing:.06em;color:#3d7850;background:#edf5ef;padding:6px 10px;border-radius:99px}
+    .roadmap-card h3{font-family:Manrope,sans-serif;color:var(--navy);font-size:1.08rem;margin:12px 0 5px}
+    .roadmap-card p{font-size:.9rem;color:var(--muted);margin:0}
+    .roadmap-card .score{margin-top:12px}
+    .roadmap-card ul{margin:14px 0 0;padding-left:19px;color:#59667b;font-size:.9rem}
+    .roadmap-card li{padding:3px 0}
+    .roadmap-experience .roadmap-dot{background:#d9b56d;box-shadow:0 0 0 3px #f6e8c9}
+    @keyframes roadDraw{from{transform:scaleY(0);opacity:.3}to{transform:scaleY(1);opacity:1}}
+    /* Certificate gallery: preview image itself opens the original PDF */
+    .certificateGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+    .certificate{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 10px 28px rgba(16,29,53,.05);transition:transform .25s ease,box-shadow .25s ease}
+    .certificate:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+    .certificatePreview{display:block;position:relative;background:#edf1f6;padding:12px;overflow:hidden}
+    .certificatePreview img{display:block;width:100%;height:190px;object-fit:contain;background:#fff;border-radius:8px;transition:transform .35s ease}
+    .certificate:hover .certificatePreview img{transform:scale(1.035)}
+    .previewHint{position:absolute;inset:auto 20px 20px 20px;background:rgba(16,29,53,.9);color:#fff;text-align:center;border-radius:8px;padding:8px;font-size:.78rem;opacity:0;transform:translateY(6px);transition:.25s ease}
+    .certificate:hover .previewHint,.certificatePreview:focus-visible .previewHint{opacity:1;transform:translateY(0)}
+    .certificateInfo{padding:18px 19px 20px}.certificateInfo h3{font-family:Manrope,sans-serif;font-size:1rem;line-height:1.35;color:var(--navy);margin:0 0 7px}.certificateInfo p{font-size:.83rem;color:var(--muted);margin:0 0 13px}.certificateLink{font-size:.82rem;font-weight:800;color:#3d7850}
+    /* Achievements use a different editorial, showcase layout */
+    .achievementShowcase{display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:stretch}
+    .achievementFeature{position:relative;overflow:hidden;background:linear-gradient(135deg,#101d35,#203d5b);color:#fff;border-radius:20px;padding:30px;min-height:260px}
+    .achievementFeature:after{content:"★";position:absolute;right:20px;bottom:-55px;font-size:190px;line-height:1;color:rgba(255,255,255,.055);transform:rotate(-12deg)}
+    .achievementBadge{display:inline-grid;place-items:center;width:52px;height:52px;border-radius:15px;background:rgba(184,224,194,.16);border:1px solid rgba(184,224,194,.35);font-size:1.5rem;margin-bottom:22px}
+    .achievementFeature .achievementLabel{color:var(--green);font-size:.74rem;letter-spacing:.15em;text-transform:uppercase;font-weight:800}
+    .achievementFeature h3{font:800 clamp(1.45rem,3vw,2rem)/1.2 Manrope,sans-serif;margin:8px 0 10px;position:relative;z-index:1}
+    .achievementFeature p{color:#d3ddeb;max-width:430px;margin:0;position:relative;z-index:1}
+    .achievementSide{display:grid;gap:14px}
+    .achievementMini{display:grid;grid-template-columns:54px 1fr;gap:15px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:15px;padding:18px}
+    .achievementMini .miniIcon{display:grid;place-items:center;width:52px;height:52px;border-radius:14px;background:#f5f0e4;font-size:1.35rem}
+    .achievementMini h3{font:800 1rem Manrope,sans-serif;color:var(--navy);margin:0 0 4px}
+    .achievementMini p{font-size:.84rem;color:var(--muted);margin:0}
+    .activityStrip{margin-top:20px;border-radius:16px;padding:21px 24px;background:#eaf0f6;display:flex;align-items:flex-start;gap:16px}
+    .activityStrip .activityIcon{font-size:1.5rem}.activityStrip h3{font:800 1rem Manrope,sans-serif;color:var(--navy);margin:0 0 5px}.activityStrip p{color:#59667b;font-size:.9rem;margin:0}
+    @media(max-width:850px){.certificateGrid{grid-template-columns:repeat(2,minmax(0,1fr))}.achievementShowcase{grid-template-columns:1fr}}
+    @media(max-width:560px){.certificateGrid{grid-template-columns:1fr}.certificatePreview img{height:220px}.roadmap{padding-left:29px}.roadmap-dot{left:-27px}.roadmap:before{left:7px}.roadmap-card{padding:20px}.achievementFeature{padding:24px}.activityStrip{padding:18px}}
+
     /* Scroll reveal animations */
     .scroll-reveal{opacity:0;transform:translateY(26px);transition:opacity .65s ease,transform .65s cubic-bezier(.2,.7,.2,1);will-change:opacity,transform}
     .scroll-reveal.is-visible{opacity:1;transform:translateY(0)}
@@ -44,7 +89,9 @@
         <a href="#education">Education</a>
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
+        <a href="#certificates">Certificates</a>
         <a href="#skills">Skills</a>
+        <a href="#achievements">Achievements</a>
         <a class="navcta" href="#contact">Let's connect ↗</a>
       </div>
     </div>
@@ -92,11 +139,11 @@
     <section id="education" style="background:#fff">
       <div class="wrap">
         <div class="sectionHead"><div><div class="kicker">Academic foundation</div><h2>Education</h2></div><p>Commerce background with a current focus on finance and management.</p></div>
-        <div class="eduGrid">
-          <article class="edu"><div class="year">2025–2027 · PURSUING</div><h3>MBA — Finance</h3><p>MET’s Institute of Management, Nashik</p><span class="score">Sem I SGPA: 7.85</span></article>
-          <article class="edu"><div class="year">2022–2025</div><h3>B.Com — Cost & Works Accounting</h3><p>Sir D. R. MS Gosavi College of Commerce, Nashik</p><span class="score">CGPA: 8.59</span></article>
-          <article class="edu"><div class="year">2022</div><h3>Higher Secondary Certificate (HSC)</h3><p>Sir D. R. MS Gosavi College of Commerce, Nashik</p><span class="score">69%</span></article>
-          <article class="edu"><div class="year">2020</div><h3>Secondary School Certificate (SSC)</h3><p>Adarsh Secondary English Medium School, Nashik</p><span class="score">75.40%</span></article>
+        <div class="roadmap roadmap-education">
+          <article class="roadmap-item edu"><span class="roadmap-dot"></span><div class="roadmap-card"><div class="year">2025–2027 · PURSUING</div><h3>MBA — Finance</h3><p>MET’s Institute of Management, Nashik</p><span class="score">Sem I SGPA: 7.85</span></div></article>
+          <article class="roadmap-item edu"><span class="roadmap-dot"></span><div class="roadmap-card"><div class="year">2022–2025</div><h3>B.Com — Cost & Works Accounting</h3><p>Sir D. R. MS Gosavi College of Commerce, Nashik</p><span class="score">CGPA: 8.59</span></div></article>
+          <article class="roadmap-item edu"><span class="roadmap-dot"></span><div class="roadmap-card"><div class="year">2022</div><h3>Higher Secondary Certificate (HSC)</h3><p>Sir D. R. MS Gosavi College of Commerce, Nashik</p><span class="score">69%</span></div></article>
+          <article class="roadmap-item edu"><span class="roadmap-dot"></span><div class="roadmap-card"><div class="year">2020</div><h3>Secondary School Certificate (SSC)</h3><p>Adarsh Secondary English Medium School, Nashik</p><span class="score">75.40%</span></div></article>
         </div>
       </div>
     </section>
@@ -105,9 +152,9 @@
     <section id="experience">
       <div class="wrap">
         <div class="sectionHead"><div><div class="kicker">Where I’ve learned</div><h2>Experience</h2></div><p>Practical exposure to accounting systems, financial records, and routine finance operations.</p></div>
-        <div class="timeline">
-          <article class="panel"><div class="role"><div><h3>Finance and Accounting OJT Intern</h3><div class="org">Avdhoot Technocrates Pvt. Ltd.</div><div class="location">Nashik, Maharashtra · Work from office</div></div><div class="date">Jun – Aug 2026</div></div><ul><li>Gaining hands-on experience in finance and accounting operations using ERP software and Tally Prime.</li><li>Recording accounting transactions, verifying invoices, and maintaining financial records.</li><li>Assisting in GST-related accounting, reporting, and day-to-day finance operations</li></a></article>     
-          <article class="panel"><div class="role"><div><h3>Accounting Intern</h3><div class="org">CA G. S. Suryawanshi</div><div class="location">Nashik, Maharashtra · Work from office</div></div><div class="date">May – Aug 2025</div></div><ul><li>Used Tally Prime and Microsoft Excel for GST sales and purchase registers, bank statements, sales and purchase bill entries, and insurance records.</li><li>Assisted with financial statement preparation and related accounting work.</li></ul></article>
+        <div class="roadmap roadmap-experience">
+          <article class="roadmap-item"><span class="roadmap-dot"></span><div class="roadmap-card"><div class="role"><div><h3>Finance and Accounting OJT Intern</h3><div class="org">Avdhoot Technocrates Pvt. Ltd.</div><div class="location">Nashik, Maharashtra · Work from office</div></div><div class="date">Jun – Aug 2026</div></div><ul><li>Gaining hands-on experience in finance and accounting operations using ERP software and Tally Prime.</li><li>Recording accounting transactions, verifying invoices, and maintaining financial records.</li><li>Assisting in GST-related accounting, reporting, and day-to-day finance operations.</li></ul></div></article>
+          <article class="roadmap-item"><span class="roadmap-dot"></span><div class="roadmap-card"><div class="role"><div><h3>Accounting Intern</h3><div class="org">CA G. S. Suryawanshi</div><div class="location">Nashik, Maharashtra · Work from office</div></div><div class="date">May – Aug 2025</div></div><ul><li>Used Tally Prime and Microsoft Excel for GST sales and purchase registers, bank statements, sales and purchase bill entries, and insurance records.</li><li>Assisted with financial statement preparation and related accounting work.</li></ul></div></article>
         </div>
       </div>
     </section>
@@ -121,6 +168,21 @@
           <article class="project"><div class="projectNum">02</div><h3>Accounting Process Automation — ERP & Tally Prime</h3><p>Professional learning focus based on OJT exposure: understanding how ERP software and Tally Prime support transaction recording, invoice verification, GST-related accounting, and routine reporting.</p><div class="pillrow"><span class="pill">ERP</span><span class="pill">Tally Prime</span><span class="pill">Accounting</span></div></article>
         </div>
         <p style="font-size:.82rem;color:#778399;margin-top:15px">Note: Project 02 presents an area of practical learning, not a claim of a separately completed research report.</p>
+      </div>
+    </section>
+
+
+    <!-- CERTIFICATES: click any preview image to open its PDF -->
+    <section id="certificates" style="background:#fff">
+      <div class="wrap">
+        <div class="sectionHead"><div><div class="kicker">Learning & credentials</div><h2>Certificates</h2></div><p>Click any certificate preview to open the full certificate PDF in a new tab.</p></div>
+        <div class="certificateGrid">
+          <article class="certificate"><a class="certificatePreview" href="Tally_Prime_with_GST.pdf" target="_blank" rel="noopener" aria-label="Open TallyPrime with GST certificate PDF"><img src="Tally_Prime_with_GST_preview.png" alt="Preview of TallyPrime with GST certificate"><span class="previewHint">Click to view certificate ↗</span></a><div class="certificateInfo"><h3>TallyPrime with GST</h3><p>Learn More Pro · 60-hour course · April 2023</p><a class="certificateLink" href="Tally_Prime_with_GST.pdf" target="_blank" rel="noopener">View certificate PDF ↗</a></div></article>
+          <article class="certificate"><a class="certificatePreview" href="Introduction_to_Business_Analytics.pdf" target="_blank" rel="noopener" aria-label="Open Introduction to Business Analytics certificate PDF"><img src="Introduction_to_Business_Analytics_preview.png" alt="Preview of Introduction to Business Analytics certificate"><span class="previewHint">Click to view certificate ↗</span></a><div class="certificateInfo"><h3>Introduction to Business Analytics</h3><p>Udemy · 365 Careers · October 2025</p><a class="certificateLink" href="Introduction_to_Business_Analytics.pdf" target="_blank" rel="noopener">View certificate PDF ↗</a></div></article>
+          <article class="certificate"><a class="certificatePreview" href="Tata_Data_Visualisation_Job_Simulation.pdf" target="_blank" rel="noopener" aria-label="Open Tata data visualisation job simulation certificate PDF"><img src="Tata_Data_Visualisation_Job_Simulation_preview.png" alt="Preview of Tata data visualisation certificate"><span class="previewHint">Click to view certificate ↗</span></a><div class="certificateInfo"><h3>Data Visualisation: Empowering Business with Effective Insights</h3><p>Tata · Forage job simulation · October 2025</p><a class="certificateLink" href="Tata_Data_Visualisation_Job_Simulation.pdf" target="_blank" rel="noopener">View certificate PDF ↗</a></div></article>
+          <article class="certificate"><a class="certificatePreview" href="Lean_Six_Sigma_Yellow_Belt_with_AI.pdf" target="_blank" rel="noopener" aria-label="Open Lean Six Sigma Yellow Belt with AI certificate PDF"><img src="Lean_Six_Sigma_Yellow_Belt_with_AI_preview.png" alt="Preview of Lean Six Sigma Yellow Belt with AI certificate"><span class="previewHint">Click to view certificate ↗</span></a><div class="certificateInfo"><h3>Lean Six Sigma Yellow Belt with AI</h3><p>Symbiosis Centre for Distance Learning · June 2026</p><a class="certificateLink" href="Lean_Six_Sigma_Yellow_Belt_with_AI.pdf" target="_blank" rel="noopener">View certificate PDF ↗</a></div></article>
+          <article class="certificate"><a class="certificatePreview" href="TCS_iON_Accounting_Fundamentals.pdf" target="_blank" rel="noopener" aria-label="Open TCS iON Accounting Fundamentals certificate PDF"><img src="TCS_iON_Accounting_Fundamentals_preview.png" alt="Preview of TCS iON Accounting Fundamentals certificate"><span class="previewHint">Click to view certificate ↗</span></a><div class="certificateInfo"><h3>Accounting Fundamentals</h3><p>TCS iON · August–September 2025</p><a class="certificateLink" href="TCS_iON_Accounting_Fundamentals.pdf" target="_blank" rel="noopener">View certificate PDF ↗</a></div></article>
+        </div>
       </div>
     </section>
 
@@ -140,13 +202,17 @@
     </section>
 
     <!-- Additional section kept after the five requested sections -->
-    <section style="background:#fff" id="achievements">
-      <div class="wrap"><div class="sectionHead"><div><div class="kicker">Beyond the classroom</div><h2>Achievements & activities</h2></div></div>
-        <div class="awardsGrid">
-          <article class="award"><strong>🏆 College Topper</strong><span>1st Prize — T.Y. B.Com Final Examination.</span></article>
-          <article class="award"><strong>📸 District-level Photography</strong><span>1st Rank — Swar Rang Competition organised by Savitribai Phule Pune University.</span></article>
-          <article class="award"><strong>💡 Innovation & writing</strong><span>3rd Rank — Aavishkar Competition (college level); participated in Task Force business idea pitching and published an ACME article on the role of youth in building a Smart India.</span></article>
+    <section style="background:#f5f7fb" id="achievements">
+      <div class="wrap">
+        <div class="sectionHead"><div><div class="kicker">Beyond the classroom</div><h2>Achievements & activities</h2></div><p>Highlights from academics, photography, innovation, and writing.</p></div>
+        <div class="achievementShowcase">
+          <article class="achievementFeature"><div class="achievementBadge">🏆</div><div class="achievementLabel">Academic achievement</div><h3>TY B.Com Final Examination Topper</h3><p>Received 1st Prize for performance in the T.Y. B.Com Final Examination.</p></article>
+          <div class="achievementSide">
+            <article class="achievementMini"><div class="miniIcon">📸</div><div><h3>Photography · 1st Rank</h3><p>Swar Rang Competition organised by Savitribai Phule Pune University.</p></div></article>
+            <article class="achievementMini"><div class="miniIcon">💡</div><div><h3>Innovation · 3rd Rank</h3><p>Aavishkar Competition at college level.</p></div></article>
+          </div>
         </div>
+        <article class="activityStrip"><div class="activityIcon">✍️</div><div><h3>Business ideas & writing</h3><p>Participated in Task Force business idea pitching and published an ACME article on the role of youth in building a Smart India.</p></div></article>
       </div>
     </section>
 
@@ -169,11 +235,11 @@
 
     // Reveal cards and section headings smoothly as visitors scroll down.
     const revealItems = document.querySelectorAll(
-      '.sectionHead, .aboutGrid .panel, .edu, .timeline .panel, .project, .skillbox, .award, .stat, .contactBox'
+      '.sectionHead, .aboutGrid .panel, .edu, .roadmap-item, .project, .skillbox, .certificate, .achievementFeature, .achievementMini, .activityStrip, .stat, .contactBox'
     );
     revealItems.forEach((item, index) => {
       item.classList.add('scroll-reveal');
-      if (item.matches('.edu, .project, .skillbox, .award, .stat')) {
+      if (item.matches('.edu, .roadmap-item, .project, .skillbox, .certificate, .achievementMini, .stat')) {
         item.style.transitionDelay = `${(index % 4) * 70}ms`;
       }
     });
